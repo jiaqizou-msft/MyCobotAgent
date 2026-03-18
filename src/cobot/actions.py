@@ -585,7 +585,7 @@ def set_encoders(encoders: List[int], speed: int = 30) -> str:
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# PRE-PROGRAMMED GESTURES (adapted from vlm_arm)
+# PRE-PROGRAMMED GESTURES
 # ══════════════════════════════════════════════════════════════════════════════
 
 def back_zero(speed: int = 40) -> str:

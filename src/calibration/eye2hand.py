@@ -33,7 +33,7 @@ class Eye2Hand:
         self.robot_2 = cfg.robot_2
         self._affine_matrix = None  # set if calibrate_affine() is called
 
-    # ── 2-point linear interpolation (simple, from vlm_arm) ──────────────
+    # ── 2-point linear interpolation ─────────────────────────────────────
 
     def pixel_to_robot_linear(self, u: float, v: float) -> Tuple[float, float]:
         """

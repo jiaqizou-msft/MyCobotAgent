@@ -10,8 +10,6 @@
 
 ---
 
-Inspired by [TommyZihao/vlm_arm](https://github.com/TommyZihao/vlm_arm). Adapted for remote control over Ethernet/TCP from a Windows host, with Azure OpenAI GPT-4o as the VLM backbone.
-
 ## Architecture
 
 ```
@@ -245,7 +243,6 @@ User instruction: "push the red block onto the star"
 
 ## Credits
 
-- Inspired by [TommyZihao/vlm_arm](https://github.com/TommyZihao/vlm_arm) (同济子豪兄)
 - Robot: [Elephant Robotics myCobot 280 Pi](https://www.elephantrobotics.com/en/mycobot-en/)
 - VLM: Azure OpenAI GPT-4o
 - Protocol: [Model Context Protocol (MCP)](https://modelcontextprotocol.io)
