@@ -84,27 +84,27 @@ press_z = TP_Z - PRESS_DEPTH
 
 # Swipe down
 print("Swipe down...")
-mc.send_coords([245, -20, HOVER_Z, 0, 180, 90], 12, 0)
+mc.send_coords([245, -25, HOVER_Z, 0, 180, 90], 12, 0)
 time.sleep(3)
-mc.send_coords([245, -20, press_z, 0, 180, 90], SLOW, 0)
+mc.send_coords([245, -25, press_z, 0, 180, 90], SLOW, 0)
 time.sleep(1.5)
-mc.send_coords([245, -70, press_z, 0, 180, 90], SLOW, 0)
+mc.send_coords([245, -55, press_z, 0, 180, 90], SLOW, 0)
 time.sleep(3)
-mc.send_coords([245, -70, HOVER_Z, 0, 180, 90], SLOW, 0)
+mc.send_coords([245, -55, HOVER_Z, 0, 180, 90], SLOW, 0)
 time.sleep(2)
 
 # Swipe up
 print("Swipe up...")
-mc.send_coords([245, -70, press_z, 0, 180, 90], SLOW, 0)
+mc.send_coords([245, -55, press_z, 0, 180, 90], SLOW, 0)
 time.sleep(1.5)
-mc.send_coords([245, -20, press_z, 0, 180, 90], SLOW, 0)
+mc.send_coords([245, -25, press_z, 0, 180, 90], SLOW, 0)
 time.sleep(3)
-mc.send_coords([245, -20, HOVER_Z, 0, 180, 90], SLOW, 0)
+mc.send_coords([245, -25, HOVER_Z, 0, 180, 90], SLOW, 0)
 time.sleep(2)
 
 # Tap center
 print("Tap center...")
-mc.send_coords([255, -45, HOVER_Z, 0, 180, 90], 12, 0)
+mc.send_coords([245, -40, HOVER_Z, 0, 180, 90], 12, 0)
 time.sleep(2)
 mc.send_coords([255, -45, press_z, 0, 180, 90], SLOW, 0)
 time.sleep(0.8)

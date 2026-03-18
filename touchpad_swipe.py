@@ -28,8 +28,8 @@ APPROACH = 10
 
 # Swipe: scroll down (drag from top to bottom of touchpad)
 # Start near top of touchpad, end near bottom
-swipe_start = (245, -25, TP_Z)  # top area of reachable touchpad
-swipe_end = (245, -70, TP_Z)    # bottom area
+swipe_start = (245, -25, TP_Z)  # top area of touchpad
+swipe_end = (245, -55, TP_Z)    # bottom area
 
 print("=== TOUCHPAD SWIPE (scroll down) ===")
 print(f"  Start: {swipe_start}")
