@@ -67,7 +67,7 @@ def record_overview():
 
 
 def type_for_recording(mc, text):
-    with open("keyboard_taught.json") as f:
+    with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "data", "keyboard_taught.json")) as f:
         data = json.load(f)
     keys = data["keys"]
     HOVER_Z = 145

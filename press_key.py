@@ -7,6 +7,7 @@ import numpy as np
 import time
 import json
 import sys
+import os
 
 ROBOT_IP = '10.105.230.93'
 ROBOT_PORT = 9000
@@ -19,7 +20,8 @@ HOVER_Z = 145      # constant hover height between keys (just above keys)
 PRESS_Z_OFFSET = 3 # press this far below the key surface Z
 
 # Load taught positions
-with open("keyboard_taught.json", "r") as f:
+DATA_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data")
+with open(os.path.join(DATA_DIR, "keyboard_taught.json"), "r") as f:
     taught_data = json.load(f)
 TAUGHT_KEYS = taught_data["keys"]
 print(f"Loaded {len(TAUGHT_KEYS)} taught key positions")

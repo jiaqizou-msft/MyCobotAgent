@@ -52,7 +52,8 @@ class VoiceController:
 
         # Load keyboard layout
         try:
-            with open("keyboard_taught.json") as f:
+            data_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data")
+            with open(os.path.join(data_dir, "keyboard_taught.json")) as f:
                 data = json.load(f)
             self.keyboard_keys = data.get("keys", {})
             self.kbd_z = data.get("keyboard_z", 130.3)
