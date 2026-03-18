@@ -2,6 +2,14 @@
 
 **VLM/VLA Embodied Agent for myCobot 280 Pi** — Control a 6-DOF robot arm with natural language using vision-language models, served as MCP tools for agentic LLM interaction.
 
+## Demo: Robot Typing on a Laptop Keyboard
+
+![Robot typing demo — dual camera view](demo_typing_compressed.gif)
+
+*The myCobot 280 types "sad" on a real laptop keyboard. Left: Intel RealSense D435i side view. Right: Pi overhead camera. The finger slides smoothly between keys at hover height, dipping down to press each key.*
+
+---
+
 Inspired by [TommyZihao/vlm_arm](https://github.com/TommyZihao/vlm_arm). Adapted for remote control over Ethernet/TCP from a Windows host, with Azure OpenAI GPT-4o as the VLM backbone.
 
 ## Architecture
