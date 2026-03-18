@@ -793,6 +793,193 @@ def resource_config() -> str:
 
 
 # ══════════════════════════════════════════════════════════════════════════════
+# RECORDING TOOLS — capture actions as GIFs
+# ══════════════════════════════════════════════════════════════════════════════
+
+@mcp.tool()
+def record_action(action: str, args: str = "") -> list:
+    """
+    Record a robot action from all cameras and return a GIF.
+
+    Starts recording from all available cameras, executes the action,
+    stops recording, and returns the GIF as an embedded image.
+
+    Args:
+        action: The action to perform. One of:
+            - "type <text>" — type text on keyboard (e.g. "type sad")
+            - "press <key>" — press a single key (e.g. "press a")
+            - "swipe <direction>" — touchpad swipe (e.g. "swipe down")
+            - "tap" — touchpad tap center
+            - "dance" — robot dance
+            - "shake" — head shake
+            - "nod" — head nod
+        args: Optional extra args (speed: "slow"/"medium"/"fast")
+
+    Returns:
+        The recorded GIF as an image that will appear in chat.
+    """
+    import subprocess
+    import threading
+    import base64
+    from mcp.types import ImageContent, TextContent
+
+    speed = args if args in ("slow", "medium", "fast") else "fast"
+    gif_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), "temp", "recorded_action.gif")
+    os.makedirs(os.path.dirname(gif_path), exist_ok=True)
+
+    # Parse the action
+    action = action.strip().lower()
+
+    # Build the press_key.py command
+    cwd = os.path.dirname(os.path.dirname(__file__))
+
+    if action.startswith("type "):
+        text = action[5:].strip()
+        cmd = [sys.executable, "press_key.py", f"--{speed}", text]
+    elif action.startswith("press "):
+        key = action[6:].strip()
+        cmd = [sys.executable, "press_key.py", f"--{speed}", key]
+    elif action.startswith("swipe "):
+        direction = action[6:].strip()
+        cmd = [sys.executable, "touchpad_swipe.py"]
+        # We'll handle swipe via inline code below
+        cmd = None
+    elif action == "tap":
+        cmd = None
+    elif action == "dance":
+        cmd = None
+    elif action in ("shake", "nod"):
+        cmd = None
+    else:
+        return [TextContent(type="text", text=f"Unknown action: {action}")]
+
+    # Record from cameras in background while executing
+    try:
+        import pyrealsense2 as rs
+        import cv2
+        import numpy as np
+        import httpx
+        from PIL import Image as PILImage
+
+        rs_frames = []
+        pi_frames = []
+        recording_flag = True
+
+        # Start RealSense
+        pipeline = rs.pipeline()
+        config = rs.config()
+        config.enable_stream(rs.stream.color, 640, 480, rs.format.bgr8, 30)
+        config.enable_stream(rs.stream.depth, 640, 480, rs.format.z16, 30)
+        profile = pipeline.start(config)
+        aligner = rs.align(rs.stream.color)
+        for _ in range(15):
+            pipeline.wait_for_frames()
+
+        def record_rs():
+            while recording_flag:
+                try:
+                    frames = pipeline.wait_for_frames()
+                    aligned = aligner.process(frames)
+                    c = np.asanyarray(aligned.get_color_frame().get_data())
+                    d = np.asanyarray(aligned.get_depth_frame().get_data())
+                    depth_cm = cv2.applyColorMap(cv2.convertScaleAbs(d, alpha=0.05), cv2.COLORMAP_JET)
+                    rs_frames.append((c.copy(), depth_cm))
+                except:
+                    pass
+                time.sleep(0.1)
+
+        def record_pi():
+            while recording_flag:
+                try:
+                    r = httpx.get("http://10.105.230.93:8080/snapshot", timeout=2)
+                    img = cv2.imdecode(np.frombuffer(r.content, np.uint8), cv2.IMREAD_COLOR)
+                    pi_frames.append(img)
+                except:
+                    pass
+                time.sleep(0.1)
+
+        t1 = threading.Thread(target=record_rs, daemon=True)
+        t2 = threading.Thread(target=record_pi, daemon=True)
+        t1.start()
+        t2.start()
+        time.sleep(0.5)
+
+        # Execute the action
+        if cmd:
+            subprocess.run(cmd, cwd=cwd, timeout=120)
+        elif action.startswith("swipe "):
+            direction = action[6:].strip()
+            from pymycobot import MyCobot280Socket
+            mc = MyCobot280Socket('10.105.230.93', 9000)
+            time.sleep(0.5)
+            dirs = {"down": ((-25, -55)), "up": ((-55, -25)), "left": ((260, 235)), "right": ((235, 260))}
+            if direction in ("down", "up"):
+                s, e = dirs[direction]
+                mc.send_coords([245, s, 145, 0, 180, 90], 12, 0); time.sleep(2)
+                mc.send_coords([245, s, 129.5, 0, 180, 90], 8, 0); time.sleep(1)
+                mc.send_coords([245, e, 129.5, 0, 180, 90], 8, 0); time.sleep(2)
+                mc.send_coords([245, e, 145, 0, 180, 90], 8, 0); time.sleep(1)
+        elif action == "tap":
+            from pymycobot import MyCobot280Socket
+            mc = MyCobot280Socket('10.105.230.93', 9000); time.sleep(0.5)
+            mc.send_coords([245, -40, 145, 0, 180, 90], 12, 0); time.sleep(2)
+            mc.send_coords([245, -40, 129.5, 0, 180, 90], 8, 0); time.sleep(0.5)
+            mc.send_coords([245, -40, 145, 0, 180, 90], 8, 0); time.sleep(1)
+        elif action == "dance":
+            actions.head_dance()
+        elif action == "shake":
+            actions.head_shake()
+        elif action == "nod":
+            actions.head_nod()
+
+        # Stop recording
+        time.sleep(0.5)
+        recording_flag = False
+        t1.join(timeout=2)
+        t2.join(timeout=2)
+        pipeline.stop()
+
+        # Build 2-panel GIF (overhead + side)
+        n = min(len(rs_frames), len(pi_frames))
+        if n == 0:
+            return [TextContent(type="text", text=f"Action completed but no frames captured.")]
+
+        cell_h = 240
+        combined = []
+        for i in range(0, n, 2):
+            rc, rd = rs_frames[i]
+            pi = pi_frames[min(i, len(pi_frames)-1)]
+            rc_r = cv2.resize(rc, (320, cell_h))
+            rd_r = cv2.resize(rd, (320, cell_h))
+            pi_r = cv2.resize(pi, (320, cell_h))
+            cv2.putText(rc_r, "Overhead", (5, 16), cv2.FONT_HERSHEY_SIMPLEX, 0.45, (0,255,0), 1)
+            cv2.putText(rd_r, "Depth", (5, 16), cv2.FONT_HERSHEY_SIMPLEX, 0.45, (255,255,255), 1)
+            cv2.putText(pi_r, "Side", (5, 16), cv2.FONT_HERSHEY_SIMPLEX, 0.45, (0,255,0), 1)
+            grid = np.hstack([rc_r, rd_r, pi_r])
+            combined.append(cv2.cvtColor(grid, cv2.COLOR_BGR2RGB))
+
+        pil_frames = [PILImage.fromarray(f).quantize(colors=64) for f in combined]
+        pil_frames[0].save(gif_path, save_all=True, append_images=pil_frames[1:],
+                          duration=200, loop=0, optimize=True)
+
+        # Read GIF and return as image
+        with open(gif_path, "rb") as f:
+            gif_data = base64.b64encode(f.read()).decode("utf-8")
+
+        size_kb = os.path.getsize(gif_path) // 1024
+        return [
+            ImageContent(type="image", data=gif_data, mimeType="image/gif"),
+            TextContent(type="text", text=f"Action '{action}' recorded. GIF: {size_kb}KB, {len(pil_frames)} frames."),
+        ]
+
+    except Exception as e:
+        # If recording fails, just execute the action without recording
+        if cmd:
+            subprocess.run(cmd, cwd=cwd, timeout=120)
+        return [TextContent(type="text", text=f"Action executed but recording failed: {e}")]
+
+
+# ══════════════════════════════════════════════════════════════════════════════
 # Main entry point
 # ══════════════════════════════════════════════════════════════════════════════
 
