@@ -641,6 +641,135 @@ def realsense_get_intrinsics() -> str:
 
 
 # ══════════════════════════════════════════════════════════════════════════════
+# KEYBOARD & TOUCHPAD INTERACTION TOOLS
+# ══════════════════════════════════════════════════════════════════════════════
+
+@mcp.tool()
+def keyboard_press_key(key: str) -> str:
+    """
+    Press a single key on the laptop keyboard.
+
+    The robot moves its finger to the key position and presses it.
+    Supports letters (a-z), numbers (0-9), and special keys.
+
+    Args:
+        key: The key to press. Examples: "a", "d", "1", "esc", "tab"
+
+    Reachable keys (left side of keyboard):
+        Row 1: ` 1 2 3 4 5 6
+        Row 2: q w e r t y
+        Row 3: a s d f g h
+        Row 4: z x c v b
+    """
+    import subprocess
+    result = subprocess.run(
+        [sys.executable, "press_key.py", "--fast", key],
+        capture_output=True, text=True, cwd=os.path.dirname(os.path.dirname(__file__)),
+        timeout=30
+    )
+    return result.stdout + result.stderr
+
+
+@mcp.tool()
+def keyboard_type_text(text: str, speed: str = "fast") -> str:
+    """
+    Type a string of text on the laptop keyboard.
+
+    The robot slides its finger between keys at hover height, pressing each
+    key in sequence. Supports slow, medium, and fast speeds.
+
+    Args:
+        text: The text to type. Only reachable keys will be pressed.
+              Unreachable characters are skipped with a warning.
+        speed: Speed mode - "slow", "medium", or "fast" (default: "fast")
+
+    Examples:
+        keyboard_type_text("sad")
+        keyboard_type_text("qwerty", speed="slow")
+    """
+    import subprocess
+    result = subprocess.run(
+        [sys.executable, "press_key.py", f"--{speed}", text],
+        capture_output=True, text=True, cwd=os.path.dirname(os.path.dirname(__file__)),
+        timeout=120
+    )
+    return result.stdout + result.stderr
+
+
+@mcp.tool()
+def touchpad_swipe(direction: str = "down") -> str:
+    """
+    Perform a swipe gesture on the laptop touchpad.
+
+    Args:
+        direction: "down" (scroll down), "up" (scroll up),
+                   "left" (swipe left), "right" (swipe right)
+    """
+    from pymycobot import MyCobot280Socket
+    mc = MyCobot280Socket('10.105.230.93', 9000)
+    time.sleep(0.5)
+
+    TP_Z = 131.5
+    HOVER = 145
+    PRESS = TP_Z - 2
+
+    # Direction vectors
+    dirs = {
+        "down":  ((245, -25), (245, -55)),
+        "up":    ((245, -55), (245, -25)),
+        "left":  ((260, -40), (235, -40)),
+        "right": ((235, -40), (260, -40)),
+    }
+    if direction not in dirs:
+        return f"Unknown direction '{direction}'. Use: down, up, left, right"
+
+    start, end = dirs[direction]
+    mc.send_coords([start[0], start[1], HOVER, 0, 180, 90], 12, 0)
+    time.sleep(2)
+    mc.send_coords([start[0], start[1], PRESS, 0, 180, 90], 8, 0)
+    time.sleep(1)
+    mc.send_coords([end[0], end[1], PRESS, 0, 180, 90], 8, 0)
+    time.sleep(2)
+    mc.send_coords([end[0], end[1], HOVER, 0, 180, 90], 8, 0)
+    time.sleep(1)
+
+    return f"Swiped {direction} on touchpad."
+
+
+@mcp.tool()
+def touchpad_tap(x_frac: float = 0.5, y_frac: float = 0.5) -> str:
+    """
+    Tap the touchpad at a specific position.
+
+    Args:
+        x_frac: Horizontal position (0.0 = left edge, 1.0 = right edge)
+        y_frac: Vertical position (0.0 = top edge, 1.0 = bottom edge)
+    """
+    from pymycobot import MyCobot280Socket
+    mc = MyCobot280Socket('10.105.230.93', 9000)
+    time.sleep(0.5)
+
+    # Touchpad bounds in robot frame
+    TP_LEFT, TP_RIGHT = 235, 260
+    TP_TOP, TP_BOTTOM = -25, -55
+    TP_Z = 131.5
+    HOVER = 145
+
+    x = TP_LEFT + x_frac * (TP_RIGHT - TP_LEFT)
+    y = TP_TOP + y_frac * (TP_BOTTOM - TP_TOP)
+    press_z = TP_Z - 2
+
+    mc.send_coords([x, y, HOVER, 0, 180, 90], 12, 0)
+    time.sleep(2)
+    mc.send_coords([x, y, press_z, 0, 180, 90], 8, 0)
+    time.sleep(0.5)
+    mc.send_coords([x, y, HOVER, 0, 180, 90], 8, 0)
+    time.sleep(1)
+
+    return f"Tapped touchpad at ({x_frac:.1f}, {y_frac:.1f})."
+
+
+# ══════════════════════════════════════════════════════════════════════════════
 # RESOURCES (read-only data endpoints)
 # ══════════════════════════════════════════════════════════════════════════════
 
