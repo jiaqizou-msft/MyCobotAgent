@@ -2,531 +2,531 @@
   "keys": {
     "`": {
       "coords": [
-        141.78,
-        98.97,
+        159.78,
+        100.97,
         130.3,
         0,
         180,
         90
       ],
-      "source": "grid_model_corrected"
+      "source": "v6_finetuned"
     },
     "1": {
       "coords": [
-        159.05,
-        99.24,
-        130.3,
-        0,
-        180,
-        90
-      ],
-      "source": "grid_model_corrected"
-    },
-    "2": {
-      "coords": [
-        176.33,
-        99.51,
-        130.3,
-        0,
-        180,
-        90
-      ],
-      "source": "grid_model_corrected"
-    },
-    "3": {
-      "coords": [
-        193.61,
-        99.79,
-        130.3,
-        0,
-        180,
-        90
-      ],
-      "source": "grid_model_corrected"
-    },
-    "4": {
-      "coords": [
-        210.88,
-        100.06,
-        130.3,
-        0,
-        180,
-        90
-      ],
-      "source": "grid_model_corrected"
-    },
-    "5": {
-      "coords": [
-        228.16,
-        100.33,
-        130.3,
-        0,
-        180,
-        90
-      ],
-      "source": "grid_model_corrected"
-    },
-    "6": {
-      "coords": [
-        245.44,
-        100.6,
-        130.3,
-        0,
-        180,
-        90
-      ],
-      "source": "grid_model_corrected"
-    },
-    "7": {
-      "coords": [
-        262.71,
-        100.87,
-        130.3,
-        0,
-        180,
-        90
-      ],
-      "source": "grid_model_corrected"
-    },
-    "8": {
-      "coords": [
-        279.99,
+        179.98,
         101.15,
         130.3,
         0,
         180,
         90
       ],
-      "source": "grid_model_corrected"
+      "source": "v6_finetuned"
+    },
+    "2": {
+      "coords": [
+        200.18,
+        101.34,
+        130.3,
+        0,
+        180,
+        90
+      ],
+      "source": "v6_finetuned"
+    },
+    "3": {
+      "coords": [
+        220.38,
+        101.52,
+        130.3,
+        0,
+        180,
+        90
+      ],
+      "source": "v6_finetuned"
+    },
+    "4": {
+      "coords": [
+        240.58,
+        101.7,
+        130.3,
+        0,
+        180,
+        90
+      ],
+      "source": "v6_finetuned"
+    },
+    "5": {
+      "coords": [
+        260.78,
+        101.88,
+        130.3,
+        0,
+        180,
+        90
+      ],
+      "source": "v6_finetuned"
+    },
+    "6": {
+      "coords": [
+        280.98,
+        102.07,
+        130.3,
+        0,
+        180,
+        90
+      ],
+      "source": "v6_finetuned"
+    },
+    "7": {
+      "coords": [
+        301.18,
+        102.25,
+        130.3,
+        0,
+        180,
+        90
+      ],
+      "source": "v6_finetuned"
+    },
+    "8": {
+      "coords": [
+        321.38,
+        102.43,
+        130.3,
+        0,
+        180,
+        90
+      ],
+      "source": "v6_finetuned"
     },
     "9": {
       "coords": [
-        297.27,
-        101.42,
+        341.58,
+        102.62,
         130.3,
         0,
         180,
         90
       ],
-      "source": "grid_model_corrected"
+      "source": "v6_finetuned"
     },
     "0": {
       "coords": [
-        314.54,
-        101.69,
+        361.78,
+        102.8,
         130.3,
         0,
         180,
         90
       ],
-      "source": "grid_model_corrected"
+      "source": "v6_finetuned"
     },
     "-": {
       "coords": [
-        331.82,
-        101.96,
+        381.98,
+        102.98,
         130.3,
         0,
         180,
         90
       ],
-      "source": "grid_model_corrected"
+      "source": "v6_finetuned"
     },
     "=": {
       "coords": [
-        349.1,
-        102.23,
+        402.18,
+        103.17,
         130.3,
         0,
         180,
         90
       ],
-      "source": "grid_model_corrected"
+      "source": "v6_finetuned"
     },
     "q": {
       "coords": [
-        155.36,
+        160.01,
         81.98,
         130.3,
         0,
         180,
         90
       ],
-      "source": "grid_model_corrected"
+      "source": "v6_finetuned"
     },
     "w": {
       "coords": [
-        172.63,
-        82.26,
+        180.21,
+        82.16,
         130.3,
         0,
         180,
         90
       ],
-      "source": "grid_model_corrected"
+      "source": "v6_finetuned"
     },
     "e": {
       "coords": [
-        189.91,
+        200.41,
+        82.35,
+        130.3,
+        0,
+        180,
+        90
+      ],
+      "source": "v6_finetuned"
+    },
+    "r": {
+      "coords": [
+        220.61,
         82.53,
         130.3,
         0,
         180,
         90
       ],
-      "source": "grid_model_corrected"
-    },
-    "r": {
-      "coords": [
-        207.19,
-        82.8,
-        130.3,
-        0,
-        180,
-        90
-      ],
-      "source": "grid_model_corrected"
+      "source": "v6_finetuned"
     },
     "t": {
       "coords": [
-        224.46,
-        83.07,
+        240.81,
+        82.71,
         130.3,
         0,
         180,
         90
       ],
-      "source": "grid_model_corrected"
+      "source": "v6_finetuned"
     },
     "y": {
       "coords": [
-        241.74,
-        83.34,
+        261.01,
+        82.9,
         130.3,
         0,
         180,
         90
       ],
-      "source": "grid_model_corrected"
+      "source": "v6_finetuned"
     },
     "u": {
       "coords": [
-        259.02,
-        83.62,
+        281.21,
+        83.08,
         130.3,
         0,
         180,
         90
       ],
-      "source": "grid_model_corrected"
+      "source": "v6_finetuned"
     },
     "i": {
       "coords": [
-        276.29,
-        83.89,
+        301.41,
+        83.26,
         130.3,
         0,
         180,
         90
       ],
-      "source": "grid_model_corrected"
+      "source": "v6_finetuned"
     },
     "o": {
       "coords": [
-        293.57,
-        84.16,
+        321.61,
+        83.45,
         130.3,
         0,
         180,
         90
       ],
-      "source": "grid_model_corrected"
+      "source": "v6_finetuned"
     },
     "p": {
       "coords": [
-        310.85,
-        84.43,
+        341.81,
+        83.63,
         130.3,
         0,
         180,
         90
       ],
-      "source": "grid_model_corrected"
+      "source": "v6_finetuned"
     },
     "[": {
       "coords": [
-        328.12,
-        84.71,
+        362.01,
+        83.81,
         130.3,
         0,
         180,
         90
       ],
-      "source": "grid_model_corrected"
+      "source": "v6_finetuned"
     },
     "]": {
       "coords": [
-        345.4,
-        84.98,
+        382.21,
+        83.99,
         130.3,
         0,
         180,
         90
       ],
-      "source": "grid_model_corrected"
+      "source": "v6_finetuned"
     },
     "\\": {
       "coords": [
-        362.68,
-        85.25,
+        402.41,
+        84.18,
         130.3,
         0,
         180,
         90
       ],
-      "source": "grid_model_corrected"
+      "source": "v6_finetuned"
     },
     "a": {
       "coords": [
-        168.94,
-        65.0,
+        162.24,
+        62.99,
         130.3,
         0,
         180,
         90
       ],
-      "source": "grid_model_corrected"
+      "source": "v6_finetuned"
     },
     "s": {
       "coords": [
-        186.21,
-        65.27,
+        182.44,
+        63.18,
         130.3,
         0,
         180,
         90
       ],
-      "source": "grid_model_corrected"
+      "source": "v6_finetuned"
     },
     "d": {
       "coords": [
-        203.49,
-        65.54,
+        202.64,
+        63.36,
         130.3,
         0,
         180,
         90
       ],
-      "source": "grid_model_corrected"
+      "source": "v6_finetuned"
     },
     "f": {
       "coords": [
-        220.77,
-        65.82,
+        222.84,
+        63.54,
         130.3,
         0,
         180,
         90
       ],
-      "source": "grid_model_corrected"
+      "source": "v6_finetuned"
     },
     "g": {
       "coords": [
-        238.04,
-        66.09,
+        243.04,
+        63.73,
         130.3,
         0,
         180,
         90
       ],
-      "source": "grid_model_corrected"
+      "source": "v6_finetuned"
     },
     "h": {
       "coords": [
-        255.32,
-        66.36,
+        263.24,
+        63.91,
         130.3,
         0,
         180,
         90
       ],
-      "source": "grid_model_corrected"
+      "source": "v6_finetuned"
     },
     "j": {
       "coords": [
-        272.6,
-        66.63,
+        283.44,
+        64.09,
         130.3,
         0,
         180,
         90
       ],
-      "source": "grid_model_corrected"
+      "source": "v6_finetuned"
     },
     "k": {
       "coords": [
-        289.87,
-        66.9,
+        303.64,
+        64.28,
         130.3,
         0,
         180,
         90
       ],
-      "source": "grid_model_corrected"
+      "source": "v6_finetuned"
     },
     "l": {
       "coords": [
-        307.15,
-        67.18,
+        323.84,
+        64.46,
         130.3,
         0,
         180,
         90
       ],
-      "source": "grid_model_corrected"
+      "source": "v6_finetuned"
     },
     ";": {
       "coords": [
-        324.43,
-        67.45,
+        344.04,
+        64.64,
         130.3,
         0,
         180,
         90
       ],
-      "source": "grid_model_corrected"
+      "source": "v6_finetuned"
     },
     "'": {
       "coords": [
-        341.7,
-        67.72,
+        364.24,
+        64.82,
         130.3,
         0,
         180,
         90
       ],
-      "source": "grid_model_corrected"
+      "source": "v6_finetuned"
     },
     "z": {
       "coords": [
-        182.52,
-        48.01,
+        173.47,
+        46.01,
         130.3,
         0,
         180,
         90
       ],
-      "source": "grid_model_corrected"
+      "source": "v6_finetuned"
     },
     "x": {
       "coords": [
-        199.79,
-        48.29,
+        193.67,
+        46.19,
         130.3,
         0,
         180,
         90
       ],
-      "source": "grid_model_corrected"
+      "source": "v6_finetuned"
     },
     "c": {
       "coords": [
-        217.07,
-        48.56,
+        213.87,
+        46.37,
         130.3,
         0,
         180,
         90
       ],
-      "source": "grid_model_corrected"
+      "source": "v6_finetuned"
     },
     "v": {
       "coords": [
-        234.35,
-        48.83,
+        234.07,
+        46.56,
         130.3,
         0,
         180,
         90
       ],
-      "source": "grid_model_corrected"
+      "source": "v6_finetuned"
     },
     "b": {
       "coords": [
-        251.62,
-        49.1,
+        254.27,
+        46.74,
         130.3,
         0,
         180,
         90
       ],
-      "source": "grid_model_corrected"
+      "source": "v6_finetuned"
     },
     "n": {
       "coords": [
-        268.9,
-        49.37,
+        274.47,
+        46.92,
         130.3,
         0,
         180,
         90
       ],
-      "source": "grid_model_corrected"
+      "source": "v6_finetuned"
     },
     "m": {
       "coords": [
-        286.18,
-        49.65,
+        294.67,
+        47.1,
         130.3,
         0,
         180,
         90
       ],
-      "source": "grid_model_corrected"
+      "source": "v6_finetuned"
     },
     ",": {
       "coords": [
-        303.45,
-        49.92,
+        314.87,
+        47.29,
         130.3,
         0,
         180,
         90
       ],
-      "source": "grid_model_corrected"
+      "source": "v6_finetuned"
     },
     ".": {
       "coords": [
-        320.73,
-        50.19,
+        335.07,
+        47.47,
         130.3,
         0,
         180,
         90
       ],
-      "source": "grid_model_corrected"
+      "source": "v6_finetuned"
     },
     "/": {
       "coords": [
-        338.01,
-        50.46,
+        355.27,
+        47.65,
         130.3,
         0,
         180,
         90
       ],
-      "source": "grid_model_corrected"
+      "source": "v6_finetuned"
     },
     "esc": {
       "coords": [
-        126.35,
-        107.33,
+        149.56,
+        110.37,
         130.3,
         0,
         180,
         90
       ],
-      "source": "grid_model_corrected"
+      "source": "v6_finetuned"
     },
     "touchpad lower left corner": {
       "coords": [
@@ -560,61 +560,61 @@
     },
     "space": {
       "coords": [
-        293.84,
-        29.13,
+        271.85,
+        22.23,
         130.3,
         0,
         180,
         90
       ],
-      "source": "grid_model_corrected"
+      "source": "v6_finetuned"
     },
     "enter": {
       "coords": [
-        391.69,
-        59.91,
+        414.86,
+        55.79,
         130.3,
         0,
         180,
         90
       ],
-      "source": "grid_model_corrected"
+      "source": "v6_finetuned"
     },
     "backspace": {
       "coords": [
-        373.17,
-        94.01,
+        422.49,
+        93.85,
         130.3,
         0,
         180,
         90
       ],
-      "source": "grid_model_corrected"
+      "source": "v6_finetuned"
     },
     "tab": {
       "coords": [
-        156.96,
-        73.41,
+        156.06,
+        72.43,
         130.3,
         0,
         180,
         90
       ],
-      "source": "grid_model_corrected"
+      "source": "v6_finetuned"
     }
   },
   "grid_model_xy": [
     [
-      13.580106382978734,
-      -16.98510638297874
+      0.23192186396875059,
+      -18.987621498253745
     ],
     [
-      17.276872340425527,
-      0.27212765957446866
+      20.2,
+      0.18302113729143343
     ],
     [
-      138.77585106382983,
-      101.96914893617026
+      159.77585106382983,
+      100.96914893617026
     ]
   ],
   "pixel_affine": [

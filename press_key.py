@@ -1,6 +1,11 @@
 """
 Press keys on the laptop using taught positions.
-Loads keyboard_taught.json and can interpolate for untaught keys.
+Supports slow/medium/fast speed modes.
+
+Usage:
+  python press_key.py sad                # type 'sad' at slow speed
+  python press_key.py --fast qwerty      # type at fast speed
+  python press_key.py --medium hello     # type at medium speed
 """
 from pymycobot import MyCobot280Socket
 import numpy as np
@@ -11,170 +16,126 @@ import os
 
 ROBOT_IP = '10.105.230.93'
 ROBOT_PORT = 9000
-SLOW_SPEED = 8
-SLIDE_SPEED = 12   # speed for lateral moves between keys
-PRESS_SPEED = 6    # speed for pressing down
-PRESS_DEPTH = 3    # mm below key surface
-SAFE_Z = 200       # safe height above keyboard
-HOVER_Z = 145      # constant hover height between keys (just above keys)
-PRESS_Z_OFFSET = 3 # press this far below the key surface Z
+
+# Speed profiles
+PROFILES = {
+    "slow": {"slide": 12, "press": 6, "approach": 8,
+             "slide_wait": 1.5, "press_wait": 1.2, "release_wait": 1.0, "start_wait": 3},
+    "medium": {"slide": 20, "press": 12, "approach": 15,
+               "slide_wait": 0.8, "press_wait": 0.6, "release_wait": 0.5, "start_wait": 2},
+    "fast": {"slide": 30, "press": 20, "approach": 20,
+             "slide_wait": 0.5, "press_wait": 0.4, "release_wait": 0.3, "start_wait": 1.5},
+}
+
+SAFE_Z = 200
+HOVER_Z = 145
+PRESS_Z_OFFSET = 3
 
 # Load taught positions
 DATA_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data")
 with open(os.path.join(DATA_DIR, "keyboard_taught.json"), "r") as f:
     taught_data = json.load(f)
 TAUGHT_KEYS = taught_data["keys"]
-print(f"Loaded {len(TAUGHT_KEYS)} taught key positions")
+print(f"Loaded {len(TAUGHT_KEYS)} key positions")
 
-# QWERTY layout for interpolation
-QWERTY = [
-    list("`1234567890-="),
-    list("qwertyuiop[]\\"),
-    list("asdfghjkl;'"),
-    list("zxcvbnm,./"),
-]
-
-# Build row/col lookup
+# QWERTY grid for interpolation
+QWERTY = [list("`1234567890-="), list("qwertyuiop[]\\"), list("asdfghjkl;'"), list("zxcvbnm,./")]
 KEY_GRID = {}
 for r, row in enumerate(QWERTY):
     for c, key in enumerate(row):
         KEY_GRID[key] = (r, c)
-# Special keys
 KEY_GRID['space'] = (4, 5)
 KEY_GRID['enter'] = (2, 12)
 KEY_GRID['backspace'] = (0, 13)
 KEY_GRID['tab'] = (1, -1)
-KEY_GRID['shift'] = (3, -1)
 KEY_GRID['esc'] = (-1, 0)
 
 
 def get_key_position(key_name):
-    """
-    Get robot XYZ for a key. Uses taught position if available,
-    otherwise interpolates from nearby taught keys.
-    """
     key = key_name.lower()
-
-    # Direct taught position
-    if key in TAUGHT_KEYS and TAUGHT_KEYS[key]["coords"]:
+    if key in TAUGHT_KEYS and TAUGHT_KEYS[key].get("coords"):
         return TAUGHT_KEYS[key]["coords"][:3]
-
-    # Interpolate from taught keys using QWERTY grid
     if key not in KEY_GRID:
-        print(f"  Unknown key: '{key}'")
         return None
-
     target_row, target_col = KEY_GRID[key]
-
-    # Find taught keys with known grid positions and coords
     ref_points = []
-    for taught_key, data in TAUGHT_KEYS.items():
-        if taught_key in KEY_GRID and data["coords"]:
-            kr, kc = KEY_GRID[taught_key]
-            xyz = data["coords"][:3]
-            ref_points.append((kr, kc, xyz))
-
+    for tk, data in TAUGHT_KEYS.items():
+        if tk in KEY_GRID and data.get("coords"):
+            kr, kc = KEY_GRID[tk]
+            ref_points.append((kr, kc, data["coords"][:3]))
     if len(ref_points) < 2:
-        print(f"  Not enough reference points to interpolate!")
         return None
-
-    # Inverse-distance weighted interpolation
-    weights = []
-    positions = []
+    weights, positions = [], []
     for kr, kc, xyz in ref_points:
         dist = np.sqrt((target_row - kr)**2 + (target_col - kc)**2)
         if dist < 0.01:
-            return xyz  # exact match
-        w = 1.0 / (dist ** 2)
-        weights.append(w)
+            return xyz
+        weights.append(1.0 / (dist ** 2))
         positions.append(xyz)
-
     weights = np.array(weights)
     positions = np.array(positions)
     weights /= weights.sum()
-
-    interpolated = (weights[:, None] * positions).sum(axis=0)
-    return interpolated.tolist()
+    return (weights[:, None] * positions).sum(axis=0).tolist()
 
 
-def press_key(mc, key_name):
-    """Press a single key (standalone, goes up between presses)."""
+def press_key(mc, key_name, sp):
     pos = get_key_position(key_name)
     if pos is None:
-        print(f"  Cannot determine position for '{key_name}'!")
+        print(f"  Skipping '{key_name}' (unknown)")
         return False
-
     x, y, z = pos
+    if not (-281 <= x <= 281):
+        print(f"  Skipping '{key_name}' (out of reach X={x:.0f})")
+        return False
     press_z = z - PRESS_Z_OFFSET
-
-    # Approach from above
-    mc.send_coords([x, y, HOVER_Z, 0, 180, 90], SLOW_SPEED, 0)
-    time.sleep(3)
-
-    # Press down
-    mc.send_coords([x, y, press_z, 0, 180, 90], PRESS_SPEED, 0)
-    time.sleep(1.5)
-
-    # Release back to hover
-    mc.send_coords([x, y, HOVER_Z, 0, 180, 90], PRESS_SPEED, 0)
-    time.sleep(1.5)
-
+    mc.send_coords([x, y, HOVER_Z, 0, 180, 90], sp["approach"], 0)
+    time.sleep(sp["start_wait"])
+    mc.send_coords([x, y, press_z, 0, 180, 90], sp["press"], 0)
+    time.sleep(sp["press_wait"])
+    mc.send_coords([x, y, HOVER_Z, 0, 180, 90], sp["press"], 0)
+    time.sleep(sp["release_wait"])
     print(f"  ✓ '{key_name}'")
     return True
 
 
-def type_text(mc, text):
-    """
-    Type a string smoothly — finger stays at hover height between keys,
-    only dips down to press each key. No going back to safe_z between chars.
-    
-    Motion: slide laterally at hover → dip to press → lift to hover → slide to next
-    """
+def type_text(mc, text, sp):
     print(f"\n{'='*50}")
-    print(f"  TYPING: '{text}'")
+    print(f"  TYPING: '{text}' [{sp_name}]")
     print(f"{'='*50}")
 
-    # Collect all key positions first
-    keys_to_press = []
-    for char in text:
-        key = 'space' if char == ' ' else char.lower()
-        pos = get_key_position(key)
+    keys = []
+    for ch in text:
+        k = 'space' if ch == ' ' else ch.lower()
+        pos = get_key_position(k)
         if pos is None:
-            print(f"  WARNING: skipping unknown key '{key}'")
+            print(f"  Skipping '{k}' (unknown)")
             continue
-        keys_to_press.append((key, pos))
+        x, y, z = pos
+        if not (-281 <= x <= 281):
+            print(f"  Skipping '{k}' (out of reach)")
+            continue
+        keys.append((k, pos))
 
-    if not keys_to_press:
-        print("  No valid keys to press!")
+    if not keys:
+        print("  No valid keys!")
         return
 
-    # Move to hover height above first key
-    first_x, first_y, first_z = keys_to_press[0][1]
-    print(f"  Moving to start position...")
-    mc.send_coords([first_x, first_y, HOVER_Z, 0, 180, 90], SLOW_SPEED, 0)
-    time.sleep(3)
+    # Move to first key
+    x, y, z = keys[0][1]
+    mc.send_coords([x, y, HOVER_Z, 0, 180, 90], sp["approach"], 0)
+    time.sleep(sp["start_wait"])
 
-    # Press each key with smooth transitions
-    for i, (key, pos) in enumerate(keys_to_press):
-        x, y, z = pos
+    for i, (key, (x, y, z)) in enumerate(keys):
         press_z = z - PRESS_Z_OFFSET
+        mc.send_coords([x, y, HOVER_Z, 0, 180, 90], sp["slide"], 0)
+        time.sleep(sp["slide_wait"])
+        mc.send_coords([x, y, press_z, 0, 180, 90], sp["press"], 0)
+        time.sleep(sp["press_wait"])
+        mc.send_coords([x, y, HOVER_Z, 0, 180, 90], sp["press"], 0)
+        time.sleep(sp["release_wait"])
+        print(f"  ✓ '{key}' ({i+1}/{len(keys)})")
 
-        # Slide to above the key (stay at hover height)
-        mc.send_coords([x, y, HOVER_Z, 0, 180, 90], SLIDE_SPEED, 0)
-        time.sleep(1.5)
-
-        # Quick dip to press
-        mc.send_coords([x, y, press_z, 0, 180, 90], PRESS_SPEED, 0)
-        time.sleep(1.2)
-
-        # Lift back to hover
-        mc.send_coords([x, y, HOVER_Z, 0, 180, 90], PRESS_SPEED, 0)
-        time.sleep(1.0)
-
-        print(f"  ✓ '{key}' ({i+1}/{len(keys_to_press)})")
-
-    # Return to safe height after typing
-    mc.send_coords([x, y, SAFE_Z, 0, 180, 90], SLOW_SPEED, 0)
+    mc.send_coords([x, y, SAFE_Z, 0, 180, 90], sp["approach"], 0)
     time.sleep(2)
     mc.send_angles([0, 0, 0, 0, 0, 0], 10)
     time.sleep(3)
@@ -182,34 +143,36 @@ def type_text(mc, text):
 
 
 if __name__ == "__main__":
+    # Parse speed flag
+    sp_name = "slow"
+    args = [a for a in sys.argv[1:] if not a.startswith("--")]
+    for a in sys.argv[1:]:
+        if a in ("--fast", "--medium", "--slow"):
+            sp_name = a[2:]
+    sp = PROFILES[sp_name]
+
     mc = MyCobot280Socket(ROBOT_IP, ROBOT_PORT)
     time.sleep(1)
-    mc.set_color(255, 100, 0)  # Orange = pressing mode
+    mc.set_color(255, 100, 0)
 
-    if len(sys.argv) > 1:
-        # Press key(s) from command line
-        target = " ".join(sys.argv[1:])
+    if args:
+        target = " ".join(args)
         if len(target) == 1:
-            press_key(mc, target)
+            press_key(mc, target, sp)
         else:
-            type_text(mc, target)
+            type_text(mc, target, sp)
     else:
-        # Interactive mode
-        print("\nInteractive key press mode.")
-        print("Type a key name or text to type, or 'quit' to exit.\n")
-
+        print(f"\nInteractive mode [{sp_name}]. Type text or 'quit'.\n")
         while True:
-            cmd = input("Press key / type text: ").strip()
-            if not cmd:
-                continue
-            if cmd.lower() == 'quit':
+            cmd = input("Type: ").strip()
+            if not cmd or cmd == "quit":
                 break
             if len(cmd) == 1:
-                press_key(mc, cmd)
+                press_key(mc, cmd, sp)
             else:
-                type_text(mc, cmd)
+                type_text(mc, cmd, sp)
 
     mc.send_angles([0, 0, 0, 0, 0, 0], 10)
     time.sleep(3)
     mc.set_color(255, 255, 255)
-    print("\nDone!")
+    print("Done!")

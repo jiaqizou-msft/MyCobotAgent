@@ -6,7 +6,7 @@
 
 ![Robot typing demo](demo_typing_4view.gif)
 
-*The myCobot 280 types "sad" on a real laptop keyboard. Four simultaneous camera views: overhead RealSense D435i RGB, depth map, side-view webcam, and full workspace overview.*
+*The myCobot 280 types "QWERTYASDFGHZXCVB" across three keyboard rows. Four camera views: overhead RealSense RGB, depth map, side webcam, and workspace overview.*
 
 ## Features
 
