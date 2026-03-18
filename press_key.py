@@ -15,7 +15,7 @@ SLIDE_SPEED = 12   # speed for lateral moves between keys
 PRESS_SPEED = 6    # speed for pressing down
 PRESS_DEPTH = 3    # mm below key surface
 SAFE_Z = 200       # safe height above keyboard
-HOVER_Z = 85       # constant hover height between keys (just above keys)
+HOVER_Z = 145      # constant hover height between keys (just above keys)
 PRESS_Z_OFFSET = 3 # press this far below the key surface Z
 
 # Load taught positions
