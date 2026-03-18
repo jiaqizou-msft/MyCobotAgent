@@ -1,0 +1,658 @@
+{
+  "keys": {
+    "`": {
+      "coords": [
+        181.55,
+        108.72,
+        70.0,
+        0,
+        180,
+        90
+      ],
+      "angles": null,
+      "reachable": true
+    },
+    "1": {
+      "coords": [
+        200.55,
+        109.42,
+        70.0,
+        0,
+        180,
+        90
+      ],
+      "angles": null,
+      "reachable": true
+    },
+    "2": {
+      "coords": [
+        219.55,
+        110.12,
+        70.0,
+        0,
+        180,
+        90
+      ],
+      "angles": null,
+      "reachable": true
+    },
+    "3": {
+      "coords": [
+        238.55,
+        110.82,
+        70.0,
+        0,
+        180,
+        90
+      ],
+      "angles": null,
+      "reachable": true
+    },
+    "4": {
+      "coords": [
+        257.55,
+        111.52,
+        70.0,
+        0,
+        180,
+        90
+      ],
+      "angles": null,
+      "reachable": true
+    },
+    "5": {
+      "coords": [
+        276.55,
+        112.22,
+        70.0,
+        0,
+        180,
+        90
+      ],
+      "angles": null,
+      "reachable": false
+    },
+    "6": {
+      "coords": [
+        295.55,
+        112.92,
+        70.0,
+        0,
+        180,
+        90
+      ],
+      "angles": null,
+      "reachable": false
+    },
+    "7": {
+      "coords": [
+        314.55,
+        113.62,
+        70.0,
+        0,
+        180,
+        90
+      ],
+      "angles": null,
+      "reachable": false
+    },
+    "8": {
+      "coords": [
+        333.55,
+        114.32,
+        70.0,
+        0,
+        180,
+        90
+      ],
+      "angles": null,
+      "reachable": false
+    },
+    "9": {
+      "coords": [
+        352.55,
+        115.03,
+        70.0,
+        0,
+        180,
+        90
+      ],
+      "angles": null,
+      "reachable": false
+    },
+    "0": {
+      "coords": [
+        371.55,
+        115.73,
+        70.0,
+        0,
+        180,
+        90
+      ],
+      "angles": null,
+      "reachable": false
+    },
+    "-": {
+      "coords": [
+        390.55,
+        116.43,
+        70.0,
+        0,
+        180,
+        90
+      ],
+      "angles": null,
+      "reachable": false
+    },
+    "=": {
+      "coords": [
+        409.55,
+        117.13,
+        70.0,
+        0,
+        180,
+        90
+      ],
+      "angles": null,
+      "reachable": false
+    },
+    "q": {
+      "coords": [
+        189.1,
+        92.77,
+        70.0,
+        0,
+        180,
+        90
+      ],
+      "angles": null,
+      "reachable": true
+    },
+    "w": {
+      "coords": [
+        208.1,
+        93.47,
+        70.0,
+        0,
+        180,
+        90
+      ],
+      "angles": null,
+      "reachable": true
+    },
+    "e": {
+      "coords": [
+        227.1,
+        94.17,
+        70.0,
+        0,
+        180,
+        90
+      ],
+      "angles": null,
+      "reachable": true
+    },
+    "r": {
+      "coords": [
+        246.1,
+        94.87,
+        70.0,
+        0,
+        180,
+        90
+      ],
+      "angles": null,
+      "reachable": true
+    },
+    "t": {
+      "coords": [
+        265.1,
+        95.57,
+        70.0,
+        0,
+        180,
+        90
+      ],
+      "angles": null,
+      "reachable": true
+    },
+    "y": {
+      "coords": [
+        284.1,
+        96.27,
+        70.0,
+        0,
+        180,
+        90
+      ],
+      "angles": null,
+      "reachable": false
+    },
+    "u": {
+      "coords": [
+        303.1,
+        96.97,
+        70.0,
+        0,
+        180,
+        90
+      ],
+      "angles": null,
+      "reachable": false
+    },
+    "i": {
+      "coords": [
+        322.1,
+        97.67,
+        70.0,
+        0,
+        180,
+        90
+      ],
+      "angles": null,
+      "reachable": false
+    },
+    "o": {
+      "coords": [
+        341.1,
+        98.37,
+        70.0,
+        0,
+        180,
+        90
+      ],
+      "angles": null,
+      "reachable": false
+    },
+    "p": {
+      "coords": [
+        360.1,
+        99.08,
+        70.0,
+        0,
+        180,
+        90
+      ],
+      "angles": null,
+      "reachable": false
+    },
+    "[": {
+      "coords": [
+        379.1,
+        99.78,
+        70.0,
+        0,
+        180,
+        90
+      ],
+      "angles": null,
+      "reachable": false
+    },
+    "]": {
+      "coords": [
+        398.1,
+        100.48,
+        70.0,
+        0,
+        180,
+        90
+      ],
+      "angles": null,
+      "reachable": false
+    },
+    "\\": {
+      "coords": [
+        417.1,
+        101.18,
+        70.0,
+        0,
+        180,
+        90
+      ],
+      "angles": null,
+      "reachable": false
+    },
+    "a": {
+      "coords": [
+        196.65,
+        76.82,
+        70.0,
+        0,
+        180,
+        90
+      ],
+      "angles": null,
+      "reachable": true
+    },
+    "s": {
+      "coords": [
+        215.65,
+        77.52,
+        70.0,
+        0,
+        180,
+        90
+      ],
+      "angles": null,
+      "reachable": true
+    },
+    "d": {
+      "coords": [
+        234.65,
+        78.22,
+        70.0,
+        0,
+        180,
+        90
+      ],
+      "angles": null,
+      "reachable": true
+    },
+    "f": {
+      "coords": [
+        253.65,
+        78.92,
+        70.0,
+        0,
+        180,
+        90
+      ],
+      "angles": null,
+      "reachable": true
+    },
+    "g": {
+      "coords": [
+        272.65,
+        79.62,
+        70.0,
+        0,
+        180,
+        90
+      ],
+      "angles": null,
+      "reachable": true
+    },
+    "h": {
+      "coords": [
+        291.65,
+        80.32,
+        70.0,
+        0,
+        180,
+        90
+      ],
+      "angles": null,
+      "reachable": false
+    },
+    "j": {
+      "coords": [
+        310.65,
+        81.02,
+        70.0,
+        0,
+        180,
+        90
+      ],
+      "angles": null,
+      "reachable": false
+    },
+    "k": {
+      "coords": [
+        329.65,
+        81.72,
+        70.0,
+        0,
+        180,
+        90
+      ],
+      "angles": null,
+      "reachable": false
+    },
+    "l": {
+      "coords": [
+        348.65,
+        82.42,
+        70.0,
+        0,
+        180,
+        90
+      ],
+      "angles": null,
+      "reachable": false
+    },
+    ";": {
+      "coords": [
+        367.65,
+        83.13,
+        70.0,
+        0,
+        180,
+        90
+      ],
+      "angles": null,
+      "reachable": false
+    },
+    "'": {
+      "coords": [
+        386.65,
+        83.83,
+        70.0,
+        0,
+        180,
+        90
+      ],
+      "angles": null,
+      "reachable": false
+    },
+    "z": {
+      "coords": [
+        204.2,
+        60.87,
+        70.0,
+        0,
+        180,
+        90
+      ],
+      "angles": null,
+      "reachable": true
+    },
+    "x": {
+      "coords": [
+        223.2,
+        61.57,
+        70.0,
+        0,
+        180,
+        90
+      ],
+      "angles": null,
+      "reachable": true
+    },
+    "c": {
+      "coords": [
+        242.2,
+        62.27,
+        70.0,
+        0,
+        180,
+        90
+      ],
+      "angles": null,
+      "reachable": true
+    },
+    "v": {
+      "coords": [
+        261.2,
+        62.97,
+        70.0,
+        0,
+        180,
+        90
+      ],
+      "angles": null,
+      "reachable": true
+    },
+    "b": {
+      "coords": [
+        280.2,
+        63.67,
+        70.0,
+        0,
+        180,
+        90
+      ],
+      "angles": null,
+      "reachable": false
+    },
+    "n": {
+      "coords": [
+        299.2,
+        64.37,
+        70.0,
+        0,
+        180,
+        90
+      ],
+      "angles": null,
+      "reachable": false
+    },
+    "m": {
+      "coords": [
+        318.2,
+        65.07,
+        70.0,
+        0,
+        180,
+        90
+      ],
+      "angles": null,
+      "reachable": false
+    },
+    ",": {
+      "coords": [
+        337.2,
+        65.77,
+        70.0,
+        0,
+        180,
+        90
+      ],
+      "angles": null,
+      "reachable": false
+    },
+    ".": {
+      "coords": [
+        356.2,
+        66.47,
+        70.0,
+        0,
+        180,
+        90
+      ],
+      "angles": null,
+      "reachable": false
+    },
+    "/": {
+      "coords": [
+        375.2,
+        67.18,
+        70.0,
+        0,
+        180,
+        90
+      ],
+      "angles": null,
+      "reachable": false
+    },
+    "space": {
+      "coords": [
+        317.76,
+        45.58,
+        70.0,
+        0,
+        180,
+        90
+      ],
+      "angles": null
+    },
+    "enter": {
+      "coords": [
+        437.93,
+        77.6,
+        70.0,
+        0,
+        180,
+        90
+      ],
+      "angles": null
+    },
+    "backspace": {
+      "coords": [
+        432.32,
+        109.85,
+        70.0,
+        0,
+        180,
+        90
+      ],
+      "angles": null
+    },
+    "tab": {
+      "coords": [
+        187.18,
+        84.58,
+        70.0,
+        0,
+        180,
+        90
+      ],
+      "angles": null
+    }
+  },
+  "grid_model_xy": [
+    [
+      7.550000000000026,
+      -15.949999999999994
+    ],
+    [
+      19.0,
+      0.700954861111124
+    ],
+    [
+      181.54999999999998,
+      108.71666666666673
+    ]
+  ],
+  "keyboard_z": 70.0,
+  "taught_reference": {
+    "q": [
+      195.6,
+      78.5,
+      67.6
+    ],
+    "a": [
+      206.3,
+      57.5,
+      71.4
+    ],
+    "z": [
+      210.7,
+      46.6,
+      72.5
+    ],
+    "/": [
+      238.93,
+      34.87,
+      213.03
+    ],
+    "5": [
+      265.9,
+      95.6,
+      69.8
+    ]
+  },
+  "num_keys": 51,
+  "row_correction_applied": true,
+  "y_nudge_applied": 5.0,
+  "col_correction_applied": true
+}
