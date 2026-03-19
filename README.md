@@ -23,7 +23,9 @@
 - **Voice Control** — Speak commands to control the robot ("type hello", "press A", "dance")
 - **50+ Atomic Actions** — Joint/Cartesian motion, jog, servo control, LED, gestures
 - **VLM Integration** — Azure GPT-4o for object grounding, visual QA, and action planning
-- **MCP Server** — 40+ tools exposed via Model Context Protocol for agentic LLM interaction
+- **MCP Server** — 45+ tools exposed via Model Context Protocol for agentic LLM interaction
+- **Action Recording** — Record any action as a multi-camera GIF, returned directly in chat
+- **Intelligent Planning** — Decomposes complex requests into sequential atomic actions
 - **Drag-and-Teach Calibration** — Teach reference keys by hand, system interpolates the rest
 
 ## Architecture
@@ -148,14 +150,44 @@ python scripts/calibration/teach_multicam.py
 ### 6. Use
 
 ```bash
-# Type on a keyboard
-python press_key.py sad
+# Type on a keyboard (slow/medium/fast)
+python press_key.py --fast sad
 
 # Voice control
 python voice_control.py
 
 # MCP server (for Claude Desktop or other LLM clients)
 python -m src.mcp_server
+```
+
+## MCP Tools
+
+The MCP server exposes 45+ tools for agentic control. Key tools:
+
+| Category | Tools |
+|----------|-------|
+| **Keyboard** | `keyboard_type_text(text, speed)`, `keyboard_press_key(key)` |
+| **Touchpad** | `touchpad_swipe(direction)`, `touchpad_tap(x, y)` |
+| **Recording** | `record_action(action)` — executes action + returns GIF in chat |
+| **Motion** | `robot_home()`, `robot_send_coords()`, `robot_finger_touch()` |
+| **Gestures** | `robot_head_dance()`, `robot_head_shake()`, `robot_head_nod()` |
+| **Vision** | `realsense_capture()`, `vlm_ask_question()`, `camera_capture()` |
+| **Agent** | `agent_execute(instruction)` — LLM plans + executes multi-step actions |
+
+See [SKILL.md](SKILL.md) for the full tool catalog, action planning rules, and decomposition examples.
+
+### Claude Desktop Integration
+
+```json
+{
+  "mcpServers": {
+    "mycobot": {
+      "command": "python",
+      "args": ["-m", "src.mcp_server"],
+      "cwd": "C:\\Users\\jiaqizou\\MyCobotAgent"
+    }
+  }
+}
 ```
 
 ## Voice Commands
