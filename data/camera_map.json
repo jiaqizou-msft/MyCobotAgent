@@ -1,0 +1,34 @@
+{
+  "cameras": {
+    "1": {
+      "type": "usb",
+      "role": "skip",
+      "note": "built-in webcam (face)"
+    },
+    "3": {
+      "type": "usb",
+      "role": "front_workspace",
+      "note": "wide view both arms + laptop"
+    },
+    "4": {
+      "type": "usb",
+      "role": "overhead",
+      "note": "top-down keyboard view",
+      "flip": true
+    },
+    "6": {
+      "type": "usb",
+      "role": "front_close",
+      "note": "RealSense close-up DUT screen + arm"
+    }
+  },
+  "roles": {
+    "front_workspace": "3",
+    "overhead": "4",
+    "front_close": "6"
+  },
+  "flip_cameras": [
+    4
+  ],
+  "timestamp": "2026-03-23"
+}

@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<Keyboard xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<DEVICE NAME="Ortler" SKU="DV" TYPE="English">
+		<UPPERLEFTOFFSET>
+			<REGION Name="Keyboard" X="2" Y="2" />
+			<REGION Name="Touchpad" X="84" Y="110" />
+		</UPPERLEFTOFFSET>
+		<TP W="111" H="90" />
+		<KEYSET>
+			<ROWS>
+				<ROW number="1" Y="0" H="9.25" />
+				<ROW number="2" Y="12.25" H="15.5"/>
+				<ROW number="3" Y="30.76" H="15.5"/>
+				<ROW number="4" Y="49.26" H="15.5"/>
+				<ROW number="5" Y="67.76" H="15.5"/>
+				<ROW number="6" Y="86.26" H="15.5"/>
+				<ROW number="7" Y="86.26" H="7.55"/>
+				<ROW number="8" Y="94.21" H="7.55"/>
+			</ROWS>
+
+			<KEYS>
+				<KEY text="ESC" W="21" X="0" Row="1" />
+				<KEY text="F1" W="16" X="24" Row="1" />
+				<KEY text="F2" W="16" X="43" Row="1" />
+				<KEY text="F3" W="16" X="62" Row="1" />
+				<KEY text="F4" W="16" X="81" Row="1" />
+				<KEY text="F5" W="16" X="100" Row="1" />
+				<KEY text="F6" W="16" X="119" Row="1" />
+				<KEY text="F7" W="16" X="138" Row="1" />
+				<KEY text="F8" W="16" X="157" Row="1" />
+				<KEY text="F9" W="16" X="176" Row="1" />
+				<KEY text="F10" W="16" X="195" Row="1" />
+				<KEY text="F11" W="16" X="214" Row="1" />
+				<KEY text="F12" W="16" X="233" Row="1" />
+				<KEY text="DEL" W="20.97" X="252" Row="1" />
+				<KEY text="Tick" W="15" X="0" Row="2" />
+				<KEY text="1" W="16" X="18" Row="2" />
+				<KEY text="2" W="16" X="37" Row="2" />
+				<KEY text="3" W="16" X="56" Row="2" />
+				<KEY text="4" W="16" X="75" Row="2" />
+				<KEY text="5" W="16" X="94" Row="2" />
+				<KEY text="6" W="16" X="113" Row="2" />
+				<KEY text="7" W="16" X="132" Row="2" />
+				<KEY text="8" W="16" X="151" Row="2" />
+				<KEY text="9" W="16" X="170" Row="2" />
+				<KEY text="0" W="16" X="189" Row="2" />
+				<KEY text="-" W="16" X="208" Row="2" />
+				<KEY text="=" W="16" X="227" Row="2" />
+				<KEY text="Backspace" W="26.97" X="246" Row="2" />
+				<KEY text="Tab" W="20.12" X="0" Row="3" />
+				<KEY text="Q" W="16" X="23.12" Row="3" />
+				<KEY text="W" W="16" X="42.12" Row="3" />
+				<KEY text="E" W="16" X="61.12" Row="3" />
+				<KEY text="R" W="16" X="80.12" Row="3" />
+				<KEY text="T" W="16" X="99.12" Row="3" />
+				<KEY text="Y" W="16" X="118.12" Row="3" />
+				<KEY text="U" W="16" X="137.12" Row="3" />
+				<KEY text="I" W="16" X="156.12" Row="3" />
+				<KEY text="O" W="16" X="175.12" Row="3" />
+				<KEY text="P" W="16" X="194.12" Row="3" />
+				<KEY text="L-Bracket" W="16" X="213.12" Row="3" />
+				<KEY text="R-Bracket" W="16" X="232.12" Row="3" />
+				<KEY text="Backslash" W="21.85" X="251.12" Row="3" />
+				<KEY text="Caplock" W="23.85" X="0" Row="4" />
+				<KEY text="A" W="16" X="26.85" Row="4" />
+				<KEY text="S" W="16" X="45.85" Row="4" />
+				<KEY text="D" W="16" X="64.85" Row="4" />
+				<KEY text="F" W="16" X="83.85" Row="4" />
+				<KEY text="G" W="16" X="102.85" Row="4" />
+				<KEY text="H" W="16" X="121.85" Row="4" />
+				<KEY text="J" W="16" X="140.85" Row="4" />
+				<KEY text="K" W="16" X="159.85" Row="4" />
+				<KEY text="L" W="16" X="178.85" Row="4" />
+				<KEY text="Semicolon" W="16" X="197.85" Row="4" />
+				<KEY text="Quote" W="16" X="216.85" Row="4" />
+				<KEY text="Enter" W="37.12" X="235.85" Row="4" />
+				<KEY text="L-Shift" W="33.5" X="0" Row="5" />
+				<KEY text="Z" W="16" X="36.5" Row="5" />
+				<KEY text="X" W="16" X="55.5" Row="5" />
+				<KEY text="C" W="16" X="74.5" Row="5" />
+				<KEY text="V" W="16" X="93.5" Row="5" />
+				<KEY text="B" W="16" X="112.5" Row="5" />
+				<KEY text="N" W="16" X="131.5" Row="5" />
+				<KEY text="M" W="16" X="150.5" Row="5" />
+				<KEY text="Comma" W="16" X="169.5" Row="5" />
+				<KEY text="Period" W="16" X="188.5" Row="5" />
+				<KEY text="Slash" W="16" X="207.5" Row="5" />
+				<KEY text="R-Shift" W="46.47" X="226.5" Row="5" />
+				<KEY text="L-Ctrl" W="20.11" X="0" Row="6" />
+				<KEY text="Function" W="16" X="23.11" Row="6" />
+				<KEY text="Windows" W="16" X="42.11" Row="6" />
+				<KEY text="L-Alt" W="16" X="61.11" Row="6" />
+				<KEY text="Spacebar" W="97.86" X="80.11" Row="6" />
+				<KEY text="R-Alt" W="16" X="180.97" Row="6" />
+				<KEY text="Context" W="16" X="199.97" Row="6" />
+				<KEY text="L-Arrow" W="16" X="218.97" Row="6" />
+				<KEY text="U-Arrow" W="16" X="237.97" Row="7" />
+				<KEY text="R-Arrow" W="16" X="256.97" Row="6" />
+				<KEY text="D-Arrow" W="16" X="237.97" Row="8" />
+			</KEYS>
+		</KEYSET>
+	</DEVICE>
+</Keyboard>

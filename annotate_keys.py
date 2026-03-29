@@ -25,9 +25,9 @@ import math
 DATA_PATH = "data/keyboard_vision_detected.json"
 LAYOUT_PATH = "data/keyboard_layout_parsed.json"
 IMG_PATH = "temp/overhead_for_annotation.jpg"
-USE_REALSENSE_OVERHEAD = True  # Use overhead RealSense instead of webcam
-RS_OVERHEAD_SN = "335222075369"
-FLIP_180 = True  # RealSense mounted upside down
+USE_REALSENSE_OVERHEAD = False  # Use USB camera
+CAM_INDEX = 1  # Overhead camera
+FLIP_180 = True  # Camera mounted upside down
 
 
 class AnchorAnnotator:
@@ -69,31 +69,17 @@ class AnchorAnnotator:
         self.img_h, self.img_w = self.cv_img.shape[:2]
 
     def recapture(self):
-        if USE_REALSENSE_OVERHEAD:
-            import pyrealsense2 as rs
-            pipeline = rs.pipeline()
-            config = rs.config()
-            config.enable_device(RS_OVERHEAD_SN)
-            config.enable_stream(rs.stream.color, 640, 480, rs.format.bgr8, 30)
-            profile = pipeline.start(config)
-            for _ in range(30):
-                pipeline.wait_for_frames()
-            frames = pipeline.wait_for_frames()
-            frame = np.asanyarray(frames.get_color_frame().get_data())
-            pipeline.stop()
+        cap = cv2.VideoCapture(CAM_INDEX, cv2.CAP_DSHOW)
+        cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1920)
+        cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 1080)
+        for _ in range(15):
+            cap.read()
+        ret, frame = cap.read()
+        cap.release()
+        if ret:
             if FLIP_180:
-                frame = cv2.rotate(frame, cv2.ROTATE_180)
+                frame = cv2.flip(frame, -1)
             self.cv_img = frame
-        else:
-            cap = cv2.VideoCapture(4, cv2.CAP_DSHOW)
-            cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1920)
-            cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 1080)
-            for _ in range(15):
-                cap.read()
-            ret, frame = cap.read()
-            cap.release()
-            if ret:
-                self.cv_img = frame
         cv2.imwrite(IMG_PATH, self.cv_img)
         self.img_h, self.img_w = self.cv_img.shape[:2]
 
@@ -430,7 +416,7 @@ class AnchorAnnotator:
             return
 
         data = {
-            "camera_index": CAM_IDX,
+            "camera_index": 0,  # default camera index
             "anchors": {k: {"mm": list(v["mm"]), "pixel": list(v["pixel"])} for k, v in self.anchors.items()},
             "detected_keys": {},
             "touchpad": None,

@@ -1,0 +1,830 @@
+{
+  "keyboard_offset": {
+    "x": 2,
+    "y": 2
+  },
+  "touchpad_offset": {
+    "x": 84,
+    "y": 110
+  },
+  "touchpad_size": {
+    "w": 111,
+    "h": 90
+  },
+  "rows": {
+    "1": {
+      "y": 0.0,
+      "h": 9.25
+    },
+    "2": {
+      "y": 12.25,
+      "h": 15.5
+    },
+    "3": {
+      "y": 30.76,
+      "h": 15.5
+    },
+    "4": {
+      "y": 49.26,
+      "h": 15.5
+    },
+    "5": {
+      "y": 67.76,
+      "h": 15.5
+    },
+    "6": {
+      "y": 86.26,
+      "h": 15.5
+    },
+    "7": {
+      "y": 86.26,
+      "h": 7.55
+    },
+    "8": {
+      "y": 94.21,
+      "h": 7.55
+    }
+  },
+  "keys": {
+    "esc": {
+      "xml_name": "ESC",
+      "row": 1,
+      "x_mm": 0.0,
+      "y_mm": 0.0,
+      "w_mm": 21.0,
+      "h_mm": 9.25,
+      "center_x_mm": 10.5,
+      "center_y_mm": 4.62
+    },
+    "f1": {
+      "xml_name": "F1",
+      "row": 1,
+      "x_mm": 24.0,
+      "y_mm": 0.0,
+      "w_mm": 16.0,
+      "h_mm": 9.25,
+      "center_x_mm": 32.0,
+      "center_y_mm": 4.62
+    },
+    "f2": {
+      "xml_name": "F2",
+      "row": 1,
+      "x_mm": 43.0,
+      "y_mm": 0.0,
+      "w_mm": 16.0,
+      "h_mm": 9.25,
+      "center_x_mm": 51.0,
+      "center_y_mm": 4.62
+    },
+    "f3": {
+      "xml_name": "F3",
+      "row": 1,
+      "x_mm": 62.0,
+      "y_mm": 0.0,
+      "w_mm": 16.0,
+      "h_mm": 9.25,
+      "center_x_mm": 70.0,
+      "center_y_mm": 4.62
+    },
+    "f4": {
+      "xml_name": "F4",
+      "row": 1,
+      "x_mm": 81.0,
+      "y_mm": 0.0,
+      "w_mm": 16.0,
+      "h_mm": 9.25,
+      "center_x_mm": 89.0,
+      "center_y_mm": 4.62
+    },
+    "f5": {
+      "xml_name": "F5",
+      "row": 1,
+      "x_mm": 100.0,
+      "y_mm": 0.0,
+      "w_mm": 16.0,
+      "h_mm": 9.25,
+      "center_x_mm": 108.0,
+      "center_y_mm": 4.62
+    },
+    "f6": {
+      "xml_name": "F6",
+      "row": 1,
+      "x_mm": 119.0,
+      "y_mm": 0.0,
+      "w_mm": 16.0,
+      "h_mm": 9.25,
+      "center_x_mm": 127.0,
+      "center_y_mm": 4.62
+    },
+    "f7": {
+      "xml_name": "F7",
+      "row": 1,
+      "x_mm": 138.0,
+      "y_mm": 0.0,
+      "w_mm": 16.0,
+      "h_mm": 9.25,
+      "center_x_mm": 146.0,
+      "center_y_mm": 4.62
+    },
+    "f8": {
+      "xml_name": "F8",
+      "row": 1,
+      "x_mm": 157.0,
+      "y_mm": 0.0,
+      "w_mm": 16.0,
+      "h_mm": 9.25,
+      "center_x_mm": 165.0,
+      "center_y_mm": 4.62
+    },
+    "f9": {
+      "xml_name": "F9",
+      "row": 1,
+      "x_mm": 176.0,
+      "y_mm": 0.0,
+      "w_mm": 16.0,
+      "h_mm": 9.25,
+      "center_x_mm": 184.0,
+      "center_y_mm": 4.62
+    },
+    "f10": {
+      "xml_name": "F10",
+      "row": 1,
+      "x_mm": 195.0,
+      "y_mm": 0.0,
+      "w_mm": 16.0,
+      "h_mm": 9.25,
+      "center_x_mm": 203.0,
+      "center_y_mm": 4.62
+    },
+    "f11": {
+      "xml_name": "F11",
+      "row": 1,
+      "x_mm": 214.0,
+      "y_mm": 0.0,
+      "w_mm": 16.0,
+      "h_mm": 9.25,
+      "center_x_mm": 222.0,
+      "center_y_mm": 4.62
+    },
+    "f12": {
+      "xml_name": "F12",
+      "row": 1,
+      "x_mm": 233.0,
+      "y_mm": 0.0,
+      "w_mm": 16.0,
+      "h_mm": 9.25,
+      "center_x_mm": 241.0,
+      "center_y_mm": 4.62
+    },
+    "del": {
+      "xml_name": "DEL",
+      "row": 1,
+      "x_mm": 252.0,
+      "y_mm": 0.0,
+      "w_mm": 20.97,
+      "h_mm": 9.25,
+      "center_x_mm": 262.49,
+      "center_y_mm": 4.62
+    },
+    "`": {
+      "xml_name": "Tick",
+      "row": 2,
+      "x_mm": 0.0,
+      "y_mm": 12.25,
+      "w_mm": 15.0,
+      "h_mm": 15.5,
+      "center_x_mm": 7.5,
+      "center_y_mm": 20.0
+    },
+    "1": {
+      "xml_name": "1",
+      "row": 2,
+      "x_mm": 18.0,
+      "y_mm": 12.25,
+      "w_mm": 16.0,
+      "h_mm": 15.5,
+      "center_x_mm": 26.0,
+      "center_y_mm": 20.0
+    },
+    "2": {
+      "xml_name": "2",
+      "row": 2,
+      "x_mm": 37.0,
+      "y_mm": 12.25,
+      "w_mm": 16.0,
+      "h_mm": 15.5,
+      "center_x_mm": 45.0,
+      "center_y_mm": 20.0
+    },
+    "3": {
+      "xml_name": "3",
+      "row": 2,
+      "x_mm": 56.0,
+      "y_mm": 12.25,
+      "w_mm": 16.0,
+      "h_mm": 15.5,
+      "center_x_mm": 64.0,
+      "center_y_mm": 20.0
+    },
+    "4": {
+      "xml_name": "4",
+      "row": 2,
+      "x_mm": 75.0,
+      "y_mm": 12.25,
+      "w_mm": 16.0,
+      "h_mm": 15.5,
+      "center_x_mm": 83.0,
+      "center_y_mm": 20.0
+    },
+    "5": {
+      "xml_name": "5",
+      "row": 2,
+      "x_mm": 94.0,
+      "y_mm": 12.25,
+      "w_mm": 16.0,
+      "h_mm": 15.5,
+      "center_x_mm": 102.0,
+      "center_y_mm": 20.0
+    },
+    "6": {
+      "xml_name": "6",
+      "row": 2,
+      "x_mm": 113.0,
+      "y_mm": 12.25,
+      "w_mm": 16.0,
+      "h_mm": 15.5,
+      "center_x_mm": 121.0,
+      "center_y_mm": 20.0
+    },
+    "7": {
+      "xml_name": "7",
+      "row": 2,
+      "x_mm": 132.0,
+      "y_mm": 12.25,
+      "w_mm": 16.0,
+      "h_mm": 15.5,
+      "center_x_mm": 140.0,
+      "center_y_mm": 20.0
+    },
+    "8": {
+      "xml_name": "8",
+      "row": 2,
+      "x_mm": 151.0,
+      "y_mm": 12.25,
+      "w_mm": 16.0,
+      "h_mm": 15.5,
+      "center_x_mm": 159.0,
+      "center_y_mm": 20.0
+    },
+    "9": {
+      "xml_name": "9",
+      "row": 2,
+      "x_mm": 170.0,
+      "y_mm": 12.25,
+      "w_mm": 16.0,
+      "h_mm": 15.5,
+      "center_x_mm": 178.0,
+      "center_y_mm": 20.0
+    },
+    "0": {
+      "xml_name": "0",
+      "row": 2,
+      "x_mm": 189.0,
+      "y_mm": 12.25,
+      "w_mm": 16.0,
+      "h_mm": 15.5,
+      "center_x_mm": 197.0,
+      "center_y_mm": 20.0
+    },
+    "_": {
+      "xml_name": "-",
+      "row": 2,
+      "x_mm": 208.0,
+      "y_mm": 12.25,
+      "w_mm": 16.0,
+      "h_mm": 15.5,
+      "center_x_mm": 216.0,
+      "center_y_mm": 20.0
+    },
+    "=": {
+      "xml_name": "=",
+      "row": 2,
+      "x_mm": 227.0,
+      "y_mm": 12.25,
+      "w_mm": 16.0,
+      "h_mm": 15.5,
+      "center_x_mm": 235.0,
+      "center_y_mm": 20.0
+    },
+    "backspace": {
+      "xml_name": "Backspace",
+      "row": 2,
+      "x_mm": 246.0,
+      "y_mm": 12.25,
+      "w_mm": 26.97,
+      "h_mm": 15.5,
+      "center_x_mm": 259.49,
+      "center_y_mm": 20.0
+    },
+    "tab": {
+      "xml_name": "Tab",
+      "row": 3,
+      "x_mm": 0.0,
+      "y_mm": 30.76,
+      "w_mm": 20.12,
+      "h_mm": 15.5,
+      "center_x_mm": 10.06,
+      "center_y_mm": 38.51
+    },
+    "q": {
+      "xml_name": "Q",
+      "row": 3,
+      "x_mm": 23.12,
+      "y_mm": 30.76,
+      "w_mm": 16.0,
+      "h_mm": 15.5,
+      "center_x_mm": 31.12,
+      "center_y_mm": 38.51
+    },
+    "w": {
+      "xml_name": "W",
+      "row": 3,
+      "x_mm": 42.12,
+      "y_mm": 30.76,
+      "w_mm": 16.0,
+      "h_mm": 15.5,
+      "center_x_mm": 50.12,
+      "center_y_mm": 38.51
+    },
+    "e": {
+      "xml_name": "E",
+      "row": 3,
+      "x_mm": 61.12,
+      "y_mm": 30.76,
+      "w_mm": 16.0,
+      "h_mm": 15.5,
+      "center_x_mm": 69.12,
+      "center_y_mm": 38.51
+    },
+    "r": {
+      "xml_name": "R",
+      "row": 3,
+      "x_mm": 80.12,
+      "y_mm": 30.76,
+      "w_mm": 16.0,
+      "h_mm": 15.5,
+      "center_x_mm": 88.12,
+      "center_y_mm": 38.51
+    },
+    "t": {
+      "xml_name": "T",
+      "row": 3,
+      "x_mm": 99.12,
+      "y_mm": 30.76,
+      "w_mm": 16.0,
+      "h_mm": 15.5,
+      "center_x_mm": 107.12,
+      "center_y_mm": 38.51
+    },
+    "y": {
+      "xml_name": "Y",
+      "row": 3,
+      "x_mm": 118.12,
+      "y_mm": 30.76,
+      "w_mm": 16.0,
+      "h_mm": 15.5,
+      "center_x_mm": 126.12,
+      "center_y_mm": 38.51
+    },
+    "u": {
+      "xml_name": "U",
+      "row": 3,
+      "x_mm": 137.12,
+      "y_mm": 30.76,
+      "w_mm": 16.0,
+      "h_mm": 15.5,
+      "center_x_mm": 145.12,
+      "center_y_mm": 38.51
+    },
+    "i": {
+      "xml_name": "I",
+      "row": 3,
+      "x_mm": 156.12,
+      "y_mm": 30.76,
+      "w_mm": 16.0,
+      "h_mm": 15.5,
+      "center_x_mm": 164.12,
+      "center_y_mm": 38.51
+    },
+    "o": {
+      "xml_name": "O",
+      "row": 3,
+      "x_mm": 175.12,
+      "y_mm": 30.76,
+      "w_mm": 16.0,
+      "h_mm": 15.5,
+      "center_x_mm": 183.12,
+      "center_y_mm": 38.51
+    },
+    "p": {
+      "xml_name": "P",
+      "row": 3,
+      "x_mm": 194.12,
+      "y_mm": 30.76,
+      "w_mm": 16.0,
+      "h_mm": 15.5,
+      "center_x_mm": 202.12,
+      "center_y_mm": 38.51
+    },
+    "[": {
+      "xml_name": "L-Bracket",
+      "row": 3,
+      "x_mm": 213.12,
+      "y_mm": 30.76,
+      "w_mm": 16.0,
+      "h_mm": 15.5,
+      "center_x_mm": 221.12,
+      "center_y_mm": 38.51
+    },
+    "]": {
+      "xml_name": "R-Bracket",
+      "row": 3,
+      "x_mm": 232.12,
+      "y_mm": 30.76,
+      "w_mm": 16.0,
+      "h_mm": 15.5,
+      "center_x_mm": 240.12,
+      "center_y_mm": 38.51
+    },
+    "\\": {
+      "xml_name": "Backslash",
+      "row": 3,
+      "x_mm": 251.12,
+      "y_mm": 30.76,
+      "w_mm": 21.85,
+      "h_mm": 15.5,
+      "center_x_mm": 262.05,
+      "center_y_mm": 38.51
+    },
+    "caps": {
+      "xml_name": "Caplock",
+      "row": 4,
+      "x_mm": 0.0,
+      "y_mm": 49.26,
+      "w_mm": 23.85,
+      "h_mm": 15.5,
+      "center_x_mm": 11.93,
+      "center_y_mm": 57.01
+    },
+    "a": {
+      "xml_name": "A",
+      "row": 4,
+      "x_mm": 26.85,
+      "y_mm": 49.26,
+      "w_mm": 16.0,
+      "h_mm": 15.5,
+      "center_x_mm": 34.85,
+      "center_y_mm": 57.01
+    },
+    "s": {
+      "xml_name": "S",
+      "row": 4,
+      "x_mm": 45.85,
+      "y_mm": 49.26,
+      "w_mm": 16.0,
+      "h_mm": 15.5,
+      "center_x_mm": 53.85,
+      "center_y_mm": 57.01
+    },
+    "d": {
+      "xml_name": "D",
+      "row": 4,
+      "x_mm": 64.85,
+      "y_mm": 49.26,
+      "w_mm": 16.0,
+      "h_mm": 15.5,
+      "center_x_mm": 72.85,
+      "center_y_mm": 57.01
+    },
+    "f": {
+      "xml_name": "F",
+      "row": 4,
+      "x_mm": 83.85,
+      "y_mm": 49.26,
+      "w_mm": 16.0,
+      "h_mm": 15.5,
+      "center_x_mm": 91.85,
+      "center_y_mm": 57.01
+    },
+    "g": {
+      "xml_name": "G",
+      "row": 4,
+      "x_mm": 102.85,
+      "y_mm": 49.26,
+      "w_mm": 16.0,
+      "h_mm": 15.5,
+      "center_x_mm": 110.85,
+      "center_y_mm": 57.01
+    },
+    "h": {
+      "xml_name": "H",
+      "row": 4,
+      "x_mm": 121.85,
+      "y_mm": 49.26,
+      "w_mm": 16.0,
+      "h_mm": 15.5,
+      "center_x_mm": 129.85,
+      "center_y_mm": 57.01
+    },
+    "j": {
+      "xml_name": "J",
+      "row": 4,
+      "x_mm": 140.85,
+      "y_mm": 49.26,
+      "w_mm": 16.0,
+      "h_mm": 15.5,
+      "center_x_mm": 148.85,
+      "center_y_mm": 57.01
+    },
+    "k": {
+      "xml_name": "K",
+      "row": 4,
+      "x_mm": 159.85,
+      "y_mm": 49.26,
+      "w_mm": 16.0,
+      "h_mm": 15.5,
+      "center_x_mm": 167.85,
+      "center_y_mm": 57.01
+    },
+    "l": {
+      "xml_name": "L",
+      "row": 4,
+      "x_mm": 178.85,
+      "y_mm": 49.26,
+      "w_mm": 16.0,
+      "h_mm": 15.5,
+      "center_x_mm": 186.85,
+      "center_y_mm": 57.01
+    },
+    ";": {
+      "xml_name": "Semicolon",
+      "row": 4,
+      "x_mm": 197.85,
+      "y_mm": 49.26,
+      "w_mm": 16.0,
+      "h_mm": 15.5,
+      "center_x_mm": 205.85,
+      "center_y_mm": 57.01
+    },
+    "'": {
+      "xml_name": "Quote",
+      "row": 4,
+      "x_mm": 216.85,
+      "y_mm": 49.26,
+      "w_mm": 16.0,
+      "h_mm": 15.5,
+      "center_x_mm": 224.85,
+      "center_y_mm": 57.01
+    },
+    "enter": {
+      "xml_name": "Enter",
+      "row": 4,
+      "x_mm": 235.85,
+      "y_mm": 49.26,
+      "w_mm": 37.12,
+      "h_mm": 15.5,
+      "center_x_mm": 254.41,
+      "center_y_mm": 57.01
+    },
+    "shift_l": {
+      "xml_name": "L-Shift",
+      "row": 5,
+      "x_mm": 0.0,
+      "y_mm": 67.76,
+      "w_mm": 33.5,
+      "h_mm": 15.5,
+      "center_x_mm": 16.75,
+      "center_y_mm": 75.51
+    },
+    "z": {
+      "xml_name": "Z",
+      "row": 5,
+      "x_mm": 36.5,
+      "y_mm": 67.76,
+      "w_mm": 16.0,
+      "h_mm": 15.5,
+      "center_x_mm": 44.5,
+      "center_y_mm": 75.51
+    },
+    "x": {
+      "xml_name": "X",
+      "row": 5,
+      "x_mm": 55.5,
+      "y_mm": 67.76,
+      "w_mm": 16.0,
+      "h_mm": 15.5,
+      "center_x_mm": 63.5,
+      "center_y_mm": 75.51
+    },
+    "c": {
+      "xml_name": "C",
+      "row": 5,
+      "x_mm": 74.5,
+      "y_mm": 67.76,
+      "w_mm": 16.0,
+      "h_mm": 15.5,
+      "center_x_mm": 82.5,
+      "center_y_mm": 75.51
+    },
+    "v": {
+      "xml_name": "V",
+      "row": 5,
+      "x_mm": 93.5,
+      "y_mm": 67.76,
+      "w_mm": 16.0,
+      "h_mm": 15.5,
+      "center_x_mm": 101.5,
+      "center_y_mm": 75.51
+    },
+    "b": {
+      "xml_name": "B",
+      "row": 5,
+      "x_mm": 112.5,
+      "y_mm": 67.76,
+      "w_mm": 16.0,
+      "h_mm": 15.5,
+      "center_x_mm": 120.5,
+      "center_y_mm": 75.51
+    },
+    "n": {
+      "xml_name": "N",
+      "row": 5,
+      "x_mm": 131.5,
+      "y_mm": 67.76,
+      "w_mm": 16.0,
+      "h_mm": 15.5,
+      "center_x_mm": 139.5,
+      "center_y_mm": 75.51
+    },
+    "m": {
+      "xml_name": "M",
+      "row": 5,
+      "x_mm": 150.5,
+      "y_mm": 67.76,
+      "w_mm": 16.0,
+      "h_mm": 15.5,
+      "center_x_mm": 158.5,
+      "center_y_mm": 75.51
+    },
+    ",": {
+      "xml_name": "Comma",
+      "row": 5,
+      "x_mm": 169.5,
+      "y_mm": 67.76,
+      "w_mm": 16.0,
+      "h_mm": 15.5,
+      "center_x_mm": 177.5,
+      "center_y_mm": 75.51
+    },
+    ".": {
+      "xml_name": "Period",
+      "row": 5,
+      "x_mm": 188.5,
+      "y_mm": 67.76,
+      "w_mm": 16.0,
+      "h_mm": 15.5,
+      "center_x_mm": 196.5,
+      "center_y_mm": 75.51
+    },
+    "/": {
+      "xml_name": "Slash",
+      "row": 5,
+      "x_mm": 207.5,
+      "y_mm": 67.76,
+      "w_mm": 16.0,
+      "h_mm": 15.5,
+      "center_x_mm": 215.5,
+      "center_y_mm": 75.51
+    },
+    "shift_r": {
+      "xml_name": "R-Shift",
+      "row": 5,
+      "x_mm": 226.5,
+      "y_mm": 67.76,
+      "w_mm": 46.47,
+      "h_mm": 15.5,
+      "center_x_mm": 249.74,
+      "center_y_mm": 75.51
+    },
+    "ctrl_l": {
+      "xml_name": "L-Ctrl",
+      "row": 6,
+      "x_mm": 0.0,
+      "y_mm": 86.26,
+      "w_mm": 20.11,
+      "h_mm": 15.5,
+      "center_x_mm": 10.05,
+      "center_y_mm": 94.01
+    },
+    "fn": {
+      "xml_name": "Function",
+      "row": 6,
+      "x_mm": 23.11,
+      "y_mm": 86.26,
+      "w_mm": 16.0,
+      "h_mm": 15.5,
+      "center_x_mm": 31.11,
+      "center_y_mm": 94.01
+    },
+    "win": {
+      "xml_name": "Windows",
+      "row": 6,
+      "x_mm": 42.11,
+      "y_mm": 86.26,
+      "w_mm": 16.0,
+      "h_mm": 15.5,
+      "center_x_mm": 50.11,
+      "center_y_mm": 94.01
+    },
+    "alt_l": {
+      "xml_name": "L-Alt",
+      "row": 6,
+      "x_mm": 61.11,
+      "y_mm": 86.26,
+      "w_mm": 16.0,
+      "h_mm": 15.5,
+      "center_x_mm": 69.11,
+      "center_y_mm": 94.01
+    },
+    "space": {
+      "xml_name": "Spacebar",
+      "row": 6,
+      "x_mm": 80.11,
+      "y_mm": 86.26,
+      "w_mm": 97.86,
+      "h_mm": 15.5,
+      "center_x_mm": 129.04,
+      "center_y_mm": 94.01
+    },
+    "alt_r": {
+      "xml_name": "R-Alt",
+      "row": 6,
+      "x_mm": 180.97,
+      "y_mm": 86.26,
+      "w_mm": 16.0,
+      "h_mm": 15.5,
+      "center_x_mm": 188.97,
+      "center_y_mm": 94.01
+    },
+    "copilot": {
+      "xml_name": "Context",
+      "row": 6,
+      "x_mm": 199.97,
+      "y_mm": 86.26,
+      "w_mm": 16.0,
+      "h_mm": 15.5,
+      "center_x_mm": 207.97,
+      "center_y_mm": 94.01
+    },
+    "left": {
+      "xml_name": "L-Arrow",
+      "row": 6,
+      "x_mm": 218.97,
+      "y_mm": 86.26,
+      "w_mm": 16.0,
+      "h_mm": 15.5,
+      "center_x_mm": 226.97,
+      "center_y_mm": 94.01
+    },
+    "up": {
+      "xml_name": "U-Arrow",
+      "row": 7,
+      "x_mm": 237.97,
+      "y_mm": 86.26,
+      "w_mm": 16.0,
+      "h_mm": 7.55,
+      "center_x_mm": 245.97,
+      "center_y_mm": 90.04
+    },
+    "right": {
+      "xml_name": "R-Arrow",
+      "row": 6,
+      "x_mm": 256.97,
+      "y_mm": 86.26,
+      "w_mm": 16.0,
+      "h_mm": 15.5,
+      "center_x_mm": 264.97,
+      "center_y_mm": 94.01
+    },
+    "down": {
+      "xml_name": "D-Arrow",
+      "row": 8,
+      "x_mm": 237.97,
+      "y_mm": 94.21,
+      "w_mm": 16.0,
+      "h_mm": 7.55,
+      "center_x_mm": 245.97,
+      "center_y_mm": 97.98
+    }
+  }
+}

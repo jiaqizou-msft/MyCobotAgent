@@ -24,3 +24,7 @@ Thumbs.db
 .vscode/
 demo_typing.gif
 demo_typing.mp4
+temp/
+*.gif
+*.npy
+*.pptx
